@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     //public bool IsPlayer;
     //public CinemachineVirtualCamera CineCamera;
     
-    public float m_speed = 150;
+    public float m_speed;
     public float m_initialSpeed;
 
     public float PlatformWidth = 2.7f;
@@ -29,16 +29,15 @@ public class PlayerMovement : MonoBehaviour
     {
         m_playerController = GetComponent<CharacterController>();
         m_initialSpeed = m_speed;
-        m_playerAnim.SetBool("Run", true);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //m_playerController.Move(Vector3.forward * m_speed * Time.deltaTime);
-        transform.Translate(Vector3.forward * m_speed * Time.deltaTime);
+        //transform.Translate(Vector3.forward * m_speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.forward * 10,  m_speed * Time.deltaTime);
         
-        m_playerAnim.SetFloat("Speed", m_speed);
 
         if (Input.GetMouseButtonDown(0))
         {

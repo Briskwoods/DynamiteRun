@@ -9,6 +9,8 @@ public class CodeManager : MonoBehaviour
 
     public GameManager GameManager_;
     public InventoryManager InventoryManager_;
+    public Animator PlayerAnimator_;
+    public BackStackObjects StackOnBack_;
 
     private void Awake()
     {
