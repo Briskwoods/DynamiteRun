@@ -13,7 +13,6 @@ public class SingleStickCollisionController : MonoBehaviour
                 {
                     case true:
                         CodeManager.Instance.InventoryManager_.m_dynamiteStackSize += 1;
-                        Debug.Log(CodeManager.Instance.InventoryManager_.m_dynamiteStackSize);
                         CodeManager.Instance.InventoryManager_.CheckNumberOfSticks();
                         Destroy(gameObject);
                         break;
