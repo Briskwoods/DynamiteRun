@@ -50,4 +50,42 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public void DisableSticksOnBack()
+    {
+        switch (m_dynamiteStackSize)
+        {
+            case 0:
+                break;
+            case 1:
+                m_sticksOnBack[0].SetActive(false);
+                break;
+            case 2:
+                m_sticksOnBack[1].SetActive(false);
+                break;
+            case 3:
+                m_sticksOnBack[2].SetActive(false);
+                break;
+            case 4:
+                m_sticksOnBack[3].SetActive(false);
+                break;
+            case 5:
+                m_sticksOnBack[4].SetActive(false);
+                break;
+            case 6:
+                m_sticksOnBack[5].SetActive(false);
+                break;
+            case 7:
+                m_sticksOnBack[6].SetActive(false);
+                break;
+            case 8:
+                m_sticksOnBack[7].SetActive(false);
+                break;
+            case 9:
+                m_sticksOnBack[8].SetActive(false);
+                break;
+            case 10:
+                m_sticksOnBack[9].SetActive(false);
+                break;
+        }
+    }
 }

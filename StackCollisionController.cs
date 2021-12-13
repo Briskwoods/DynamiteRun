@@ -116,6 +116,13 @@ public class StackCollisionController : MonoBehaviour
                     case false:
                         break;
                 }
+                switch (CodeManager.Instance.InventoryManager_.m_dynamiteStackSize.Equals(10))
+                {
+                    case true:
+                        break;
+                    case false:
+                        break;
+                }
                 break;
             case false:
                 break;
