@@ -11,10 +11,12 @@ public class CameraController : MonoBehaviour
     [SerializeField] float m_yPos;                              // Height from player
     [SerializeField] float m_zPos;                              // Distance From Player on Z axis
 
+    public CameraShakeScript m_shakeScript;
+
 
     void Start()
     {
-        //InvokeRepeating("MoveCamera", 0.05f, 0.05f);
+        //InvokeRepeating("MoveCamera", 0.05f, 0.05f)
     }
 
     // Update is called once per frame
