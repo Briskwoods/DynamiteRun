@@ -23,11 +23,20 @@ public class ThrowController : MonoBehaviour
 
     public void Throw()
     {
-        switch(CodeManager.Instance.InventoryManager_.m_dynamiteStackSize != 0)
+        switch(CodeManager.Instance.InventoryManager_.m_dynamiteStackSize > 0)
         {
             case true:
                 CodeManager.Instance.PlayerAnimator_.SetTrigger("Throw");
                 StartCoroutine(DelayAfterThrow(m_throwDelay));
+                break;
+            case false:
+                break;
+        }
+
+        switch(CodeManager.Instance.InventoryManager_.m_dynamiteStackSize < 0)
+        {
+            case true:
+                CodeManager.Instance.InventoryManager_.m_dynamiteStackSize = 0;
                 break;
             case false:
                 break;

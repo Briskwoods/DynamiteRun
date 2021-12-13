@@ -31,6 +31,7 @@ public class InventoryManager : MonoBehaviour
                 m_stickInHand.SetActive(false);
                 // Set player animator to run whilst holding stick
                 CodeManager.Instance.PlayerAnimator_.SetBool("hasStick", false);
+                m_dynamiteStackSize = 0;
                 break;
         }
     }
