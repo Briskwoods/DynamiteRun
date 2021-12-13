@@ -11,6 +11,11 @@ public class CodeManager : MonoBehaviour
     public InventoryManager InventoryManager_;
     public Animator PlayerAnimator_;
     public BackStackObjects StackOnBack_;
+    public ThrowController ThrowController_;
+    public Transform ThrowPoint_;
+    public Rigidbody StickToThrow_;
+    public CameraController CameraController_;
+    public PlayerMovement PlayerMovement_;
 
     private void Awake()
     {
