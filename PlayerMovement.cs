@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool m_isStopped = false;
 
+    public MousePosition MousePos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +30,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         switch (!m_isStopped)
         {
             case true:
-                //m_playerController.Move(Vector3.forward * m_speed * Time.deltaTime);
-                //transform.Translate(Vector3.forward * m_speed * Time.deltaTime);
 
                 transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.forward * 10, m_speed * Time.deltaTime);
 
@@ -52,17 +52,18 @@ public class PlayerMovement : MonoBehaviour
                     IMP.y = 0f;
                     DistanceFromCenter = Vector3.Distance(IP, IMP);
                     Direction = (IP - IMP).x;
+
                     if (Direction > 0 && transform.position.x > -PlatformWidth)
                     {
                         //moving to the left
                         Percent = (DistanceFromCenter / MaxFingerDistance);
-                        XPos = (-PlatformWidth * Percent);
+                        XPos = (-PlatformWidth * Percent) + MousePos.PlayerPos.x; ;
                     }
                     else if (Direction < 0 && transform.position.x < PlatformWidth)
                     {
                         //Moving to the Right
                         Percent = (DistanceFromCenter / MaxFingerDistance);
-                        XPos = (PlatformWidth * Percent);
+                        XPos = (PlatformWidth * Percent) + MousePos.PlayerPos.x; ;
                     }
                     else if (Direction < 0 && transform.position.x > PlatformWidth)
                     {
@@ -93,8 +94,6 @@ public class PlayerMovement : MonoBehaviour
                 break;
             case false:
                 break;
-        }
-
-        
+        }        
     }
 }

@@ -11,7 +11,7 @@ public class WaypointTrigger : MonoBehaviour
         switch (other.tag == "Runner")
         {
             case true:
-                other.GetComponent<RunnerController>().target = nextTarget;
+                //other.GetComponent<RunnerController>().target = nextTarget;
                 break;
             case false:
                 break;
@@ -23,7 +23,7 @@ public class WaypointTrigger : MonoBehaviour
         switch (other.tag == "Runner")
         {
             case true:
-                other.GetComponent<RunnerController>().target = nextTarget;
+                //other.GetComponent<RunnerController>().target = nextTarget;
                 break;
             case false:
                 break;
@@ -35,7 +35,7 @@ public class WaypointTrigger : MonoBehaviour
         switch (other.tag == "Runner")
         {
             case true:
-                other.GetComponent<RunnerController>().target = nextTarget;
+                //other.GetComponent<RunnerController>().target = nextTarget;
                 break;
             case false:
                 break;

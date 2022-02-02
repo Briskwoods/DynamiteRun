@@ -16,6 +16,9 @@ public class CodeManager : MonoBehaviour
     public Rigidbody StickToThrow_;
     public CameraController CameraController_;
     public PlayerMovement PlayerMovement_;
+    public EndGame EndGame_;
+    public RunnerObjects RunnerObjects_;
+    public UIManager UIManager_;
 
     private void Awake()
     {

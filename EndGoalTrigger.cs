@@ -15,9 +15,17 @@ public class EndGoalTrigger : MonoBehaviour
                 CodeManager.Instance.PlayerAnimator_.SetBool("Win", true);
                 CodeManager.Instance.PlayerMovement_.m_isStopped = true;
                 CodeManager.Instance.PlayerMovement_.gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+
+                Invoke("EndGame", 2f);
                 break;
             case false:
                 break;
         }
+    }
+
+
+    public void EndGame()
+    {
+        CodeManager.Instance.EndGame_.EndTheGame();
     }
 }
