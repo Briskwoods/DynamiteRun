@@ -34,6 +34,16 @@ public class InventoryManager : MonoBehaviour
                 m_dynamiteStackSize = 0;
                 break;
         }
+
+
+        switch(m_dynamiteStackSize > 9)
+        {
+            case true:
+                m_dynamiteStackSize = 9;
+                break;
+            case false:
+                break;
+        }
     }
 
     public void EnableSticksOnBack()

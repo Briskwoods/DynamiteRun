@@ -47,7 +47,8 @@ public class ThrowController : MonoBehaviour
     // Delay before throwing again Coroutine
     IEnumerator DelayAfterThrow(float seconds)
     {
-        
+        m_StickToThrow = CodeManager.Instance.StickToThrow_; // Control Variable
+
         yield return new WaitForSeconds(seconds); // Slight Delay before throwing again        
         m_StickToThrow = Instantiate(m_StickToThrow, m_throwPoint.transform.position, m_throwPoint.transform.rotation); // Instantiate Stick to throw at hand position        
         m_StickToThrow.AddForce((m_StickToThrow.transform.forward + new Vector3(0, m_throwHeight, 0)) * Force, ForceMode.Impulse);// Add force in the Z direction (forward)        
